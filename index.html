@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        
+    <div class="wrapper">
+        <header>Fake Details Generator</header>
+        <div class="name">
+            <span></span>
+        </div>
+        <div class="email-address">
+            <span></span>
+        </div>
+        <div class="phone-number">
+            <span></span>
+        </div>
+        <div class="phone-number">
+            <span id="country" ></span>
+        </div>
+        <div  class="phone-number">
+            <span id="age" ></span>
+        </div>
+        <button id="generate">Generate</button>
+    </div>
+
+    <p>Click The Generate Button To Generate FAKE Details</p>
+    </div>
+    
+  
+    
+</body>
+<script>
+   const name = document.querySelector(".wrapper .name span"),
+   email = document.querySelector(".wrapper .email-address span"),
+   phone = document.querySelector(".wrapper .phone-number span"),
+   country = document.getElementById("country"),
+   age = document.getElementById("age"),
+   generateBtn = document.querySelector("button"),
+   image = document.querySelector(".image-panel");
+
+   generateBtn.addEventListener("click",()=> {
+     
+
+
+         let peoplee = '{"people":[' +
+         '{"name": "Steve Dickson","email": "stevedickson@example.com","tel": "9088265405","age": "45","country":"Finland"},' +
+         '{"name": "John Doe","email": "johndoe@example.com","tel": "525 636 787","age": "39","country": "Canada"},' +
+         '{"name": "James William","email": "jameswilliam@example.com","tel": "2438979573","age": "12","country": "Canada"},' + 
+         '{"name": "Steffen Murley","email": "steffenmurley@example.com","tel": "724423843","age": "39","country": "Manchester"},' + 
+         '{"name": "Tobias Wilbhurde","email": "tbd@example.com","tel": "436949870","age": "43","country": "US"},' + 
+         '{"name": "David Malway","email": "davidmal@example.com","tel": "54356676","age": "36","country": "Manchester"},' + 
+         '{"name": "Rambley Cook","email": "rambleycook@example.com","tel": "556654654","age": "56","country": "United Kingdom"},' + 
+         '{"name": "Master Frank","email": "frank2@example.com","tel": "724423843","age": "39","country": "Manchester"},' + 
+         '{"name": "Wilhbhurg Petersky","email": "wpeters@example.com","tel": "546766756","age": "39","country": "Manchester"},' + 
+         '{"name": "Peter Lofghard","email": "peter@example.com","tel": "57567687","age": "39","country": "United States"},' + 
+         '{"name": "Jones Brewick","email": "jonathan21@example.com","tel": "43543666","age": "39","country": "Manchester"},' + 
+         '{"name": "General Adams Wilson","email": "adamswilson@example.com","tel": "1985908567","age": "56","country": "Russia"},' + 
+         '{"name": "Marwad Babarda","email": "mwdbabr@example.com","tel": "54657657","age": "78","country": "Uganda"},' + 
+         '{"name": "Brambo Forde","email": "bramboforde@example.com","tel": "724423843","age": "45","country": "Doha"},' + 
+         '{"name": "Ranado Diwada","email": "rndiwada@domain.com","tel": "4354676565","age": "21","country": "Mozambique"},' + 
+         '{"name": "Frederick Johnson","email": "frederickjohnson@example.com","tel": "5665757567","age": "59","country": "Vatican City"},' + 
+         '{"name": "Ramesh Prabhu","email": "rameshji@example.com","tel": "918205678","age": "34","country": "India"},' + 
+         '{"name": "Mohammad Akbar","email": "mohammedakbar@example.com","tel": "9280332518","age": "54","country": "Pakistan"},' + 
+         '{"name": "Manadi Bashawe","email": "mdbashwe@example.com","tel": "789089023","age": "39","country": "Iran"} ]}'; 
+
+         const obj = JSON.parse(peoplee);
+         
+         var random =  obj.people[Math.floor(Math.random() * 19)];
+        console.log(random)
+            name.innerHTML = "Name: " + random.name;
+            email.innerHTML = "Email: " + random.email;
+            phone.innerHTML = "Phone: " + random.tel;
+            country.innerHTML = "Country: " + random.country;
+            age.innerHTML = "Age: " + random.age;
+   });
+ 
+</script>
+</html>
